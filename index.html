@@ -1,125 +1,430 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link
-    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-    rel="stylesheet" />
-  <link rel="stylesheet" href="style.css">
-  <title>Главная</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Хафоева Валерия Александровна — учитель физики</title>
+  <meta name="description" content="Сайт учителя физики Валерии Александровны Хафоевой: уроки, достижения учеников, кружок робототехники, методическая копилка с приложениями и игры для переменок.">
+  <meta name="theme-color" content="#0a0f1e">
+  <link rel="canonical" href="https://aladdin-dev.github.io/lera-present/">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Хафоева Валерия Александровна">
+  <meta property="og:url" content="https://aladdin-dev.github.io/lera-present/">
+  <meta property="og:title" content="Хафоева Валерия Александровна — учитель физики">
+  <meta property="og:description" content="Физика, робототехника и живой интерес к тому, как устроен мир. Уроки, победы учеников и приложения для обучения.">
+  <meta property="og:image" content="https://aladdin-dev.github.io/lera-present/assets/img/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Валерия Александровна Хафоева — учитель физики">
+  <meta property="og:locale" content="ru_RU">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Хафоева Валерия Александровна — учитель физики">
+  <meta name="twitter:description" content="Физика, робототехника и живой интерес к тому, как устроен мир. Уроки, победы учеников и приложения для обучения.">
+  <meta name="twitter:image" content="https://aladdin-dev.github.io/lera-present/assets/img/og.jpg">
+
+  <link rel="preload" href="assets/fonts/manrope-400-800-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/unbounded-500-700-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/img/hero.webp" as="image" type="image/webp" fetchpriority="high">
+  <link rel="stylesheet" href="assets/fonts.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Хафоева Валерия Александровна",
+    "jobTitle": "Учитель физики",
+    "worksFor": {
+      "@type": "School",
+      "name": "МБОУ СОШ им. А.И. Крушанова с. Михайловка"
+    },
+    "image": "https://aladdin-dev.github.io/lera-present/assets/img/portrait.webp",
+    "url": "https://aladdin-dev.github.io/lera-present/"
+  }
+  </script>
 </head>
 
-<body class="h-full font-roboto">
-  <div id="fullwrap"
-    class="h-full bg-[#9bd5e2] md:w-11/12 xl:w-4/5 mx-auto flex flex-col justify-start items-center overflow-hidden">
-    <nav class="w-full flex justify-start items-center bg-[#82cce7] h-16 p-5 fixed sm:w-5/6 xl:w-4/5 mx-auto z-10">
-      <img
-        src="https://lh3.googleusercontent.com/UNEZy4eBFFU1mE4InBQehkW8GJ9kNDpUv7dojRyHp9Btha_ou69qZipL21e8_KIYEWoeTBI44nh3KZeJ3eRUyU74PD0eJ-c37Q0fiGAFn5hhz1RyJSLgm2AQa64its0Wbur6F5eqrQ=w2400"
-        class="w-12" alt="">
+<body>
+  <a class="skip-link" href="#main">Перейти к содержимому</a>
+
+  <!-- индикатор прокрутки -->
+  <div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
+
+  <!-- набор иконок -->
+  <svg class="sprite" aria-hidden="true" focusable="false" width="0" height="0">
+    <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M7 17 17 7M9 7h8v8"/>
+    </symbol>
+    <symbol id="i-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 4v16M6 14l6 6 6-6"/>
+    </symbol>
+    <symbol id="i-atom" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round">
+      <ellipse cx="12" cy="12" rx="9.2" ry="3.6"/>
+      <ellipse cx="12" cy="12" rx="9.2" ry="3.6" transform="rotate(60 12 12)"/>
+      <ellipse cx="12" cy="12" rx="9.2" ry="3.6" transform="rotate(-60 12 12)"/>
+      <circle cx="12" cy="12" r="1.5" fill="currentColor" stroke="none"/>
+    </symbol>
+    <symbol id="i-calc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="4" y="2.5" width="16" height="19" rx="3"/>
+      <rect x="7.5" y="6" width="9" height="3.6" rx="1.2"/>
+      <path d="M8.4 14h.01M12 14h.01M15.6 14h.01M8.4 17.6h.01M12 17.6h.01M15.6 17.6h.01"/>
+    </symbol>
+    <symbol id="i-test" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M9 3h6a1 1 0 0 1 1 1v1H8V4a1 1 0 0 1 1-1Z"/>
+      <rect x="5" y="5" width="14" height="16" rx="2.5"/>
+      <path d="m9 13 2 2 4-4.2"/>
+    </symbol>
+    <symbol id="i-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 4.8A1.8 1.8 0 0 1 5.8 3H20v18H5.8A1.8 1.8 0 0 1 4 19.2V4.8Z"/>
+      <path d="M8 3v18M12 7.5h4M12 11h4"/>
+    </symbol>
+    <symbol id="i-robot" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="4" y="7" width="16" height="12" rx="3.2"/>
+      <circle cx="9.2" cy="13" r="1"/>
+      <circle cx="14.8" cy="13" r="1"/>
+      <path d="M12 3v4M9.5 16.5h5M8 19v2M16 19v2"/>
+    </symbol>
+    <symbol id="i-cap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="m2.5 8 9.5-4L21.5 8 12 12 2.5 8Z"/>
+      <path d="M6.5 10v4.4c0 1.7 2.5 3.1 5.5 3.1s5.5-1.4 5.5-3.1V10M21.5 8v5"/>
+    </symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="5" width="18" height="16" rx="2.5"/>
+      <path d="M3 10h18M8 3v4M16 3v4"/>
+    </symbol>
+    <symbol id="i-gamepad" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="2.5" y="7.5" width="19" height="10" rx="5"/>
+      <path d="M7 10.5v3M5.5 12h3"/>
+      <circle cx="15.6" cy="11" r=".9" fill="currentColor" stroke="none"/>
+      <circle cx="17.8" cy="13.4" r=".9" fill="currentColor" stroke="none"/>
+    </symbol>
+    <symbol id="i-ship" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M2.5 16.5h19l-2.6 4H5.1l-2.6-4Z"/>
+      <path d="M7.2 16.5V9.4h7.3l3.1 7.1"/>
+      <path d="M10.8 9.4V3.6h1.9v5.8"/>
+      <path d="M17.6 16.5V13"/>
+    </symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+      <path d="M12 5v14M5 12h14"/>
+    </symbol>
+    <symbol id="i-chev-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="m14.5 6-6 6 6 6"/>
+    </symbol>
+    <symbol id="i-chev-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="m9.5 6 6 6-6 6"/>
+    </symbol>
+    <symbol id="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+      <path d="m6 6 12 12M18 6 6 18"/>
+    </symbol>
+  </svg>
+
+  <!-- ---------- Шапка ---------- -->
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a class="brand" href="#top" aria-label="Хафоева Валерия Александровна — на главную">
+        <span class="brand__mark" aria-hidden="true">В</span>
+        <span class="brand__text">
+          <span class="brand__name">Валерия Хафоева</span>
+          <span class="brand__role">учитель физики</span>
+        </span>
+      </a>
+
+      <nav class="nav__links" aria-label="Основная навигация">
+        <a href="#about" data-nav="about">Обо мне</a>
+        <a href="#directions" data-nav="directions">Направления</a>
+        <a href="#gallery" data-nav="gallery">Галерея</a>
+        <a href="#games" data-nav="games">Переменка</a>
+      </nav>
+
+      <a class="nav__cta" href="#tools">
+        <svg class="icon" aria-hidden="true"><use href="#i-calc"/></svg>
+        Копилка
+      </a>
+
+      <button class="burger" id="burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ---------- Мобильное меню ---------- -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <nav class="mobile-menu__nav" aria-label="Меню">
+      <a href="#about"><span>01</span>Обо мне</a>
+      <a href="#directions"><span>02</span>Направления</a>
+      <a href="#gallery"><span>03</span>Галерея</a>
+      <a href="#tools"><span>04</span>Методическая копилка</a>
+      <a href="#games"><span>05</span>Переменка</a>
     </nav>
-    <div id="presentspace" class="radial-blue w-full mt-16 sm:mt-0 min-h-screen grid place-items-center relative">
-      <div id="prezentwrap" class="w-10/12 h-full sm:h-[38rem] flex flex-col md:flex-row gap-2">
-        <div class="mx-auto h-full flex flex-1 flex-col justify-around gap-4">
-          <h1 id="name" class="flex flex-col justify-center items-center text-4xl text-[#294d4b] font-medium ">
-            <span>Хафоева</span>
-            <span>Валерия</span>
-            <span>Александровна</span>
+    <p class="mobile-menu__foot">МБОУ СОШ им. А.И. Крушанова<br>с. Михайловка</p>
+  </div>
+
+  <main id="main">
+    <!-- ---------- Первый экран ---------- -->
+    <section class="hero" id="top">
+      <img class="hero__img" id="heroImg" src="assets/img/hero.webp" width="1500" height="2000" alt="" fetchpriority="high" decoding="async">
+      <div class="hero__scrim" aria-hidden="true"></div>
+      <div class="hero__glow" aria-hidden="true"></div>
+      <canvas class="hero__particles" id="particles" aria-hidden="true"></canvas>
+
+      <div class="hero__formulas" aria-hidden="true">
+        <span style="--x:80%;--y:12%;--d:0s">E = mc²</span>
+        <span style="--x:93%;--y:34%;--d:-5s">U = IR</span>
+        <span style="--x:88%;--y:66%;--d:-9s">λ = c / ν</span>
+        <span style="--x:68%;--y:84%;--d:-13s">P = UI</span>
+        <span style="--x:57%;--y:90%;--d:-7s">F = ma</span>
+      </div>
+
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <p class="hero__chip">
+            <span class="hero__dot" aria-hidden="true"></span>
+            Учитель физики · МБОУ СОШ им. А.И. Крушанова
+          </p>
+
+          <h1 class="hero__title">
+            <span class="hero__line">Хафоева</span>
+            <span class="hero__line hero__line--accent">Валерия</span>
+            <span class="hero__line hero__line--soft">Александровна</span>
           </h1>
-          <div id="adres" class="text-center text-xl text-[#164644]">МБОУ СОШ им. А.И. Крушанова с.Михайловка
+
+          <p class="hero__quote">«В каждом учителе солнце, только дайте ему светить!»</p>
+
+          <p class="hero__lead">
+            Физика, робототехника и живой интерес к тому, как устроен мир.
+            Здесь — уроки, победы учеников и приложения, которые помогают учиться.
+          </p>
+
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#tools">
+              Методическая копилка
+              <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+            </a>
+            <a class="btn btn--ghost" href="#gallery">Смотреть галерею</a>
           </div>
         </div>
-        <div class="mx-auto py-4 max-h-full flex flex-[2_2_0%] items-center gap-5">
-          <img
-            src="https://lh3.googleusercontent.com/TeUR8jeG9K7CCCi7TZH7VXfiQeqntzwXSil0a8g4YLMldTeQBRLHr1W7exCcLMlSP2o5zQVX9HQbvg887ySSgWSs0ozi5v2EXK320BjzWe4WjlrHBwWyEW_auNN_G7hM3pHLFu3m=w2400"
-            class="w-1/2 max-h-full rounded-2xl" alt="">
-          <h3 id="sentens"
-            class="w-1/2 text-2xl text-slate-700 italic border border-gray-700 drop-shadow-2xl shadow-orange-100 rounded-2xl p-2">
-            В
-            каждом
-            учителе солнце,
-            только
-            дайте
-            ему
-            светить!
-          </h3>
+      </div>
+
+      <a class="hero__scroll" href="#about" aria-label="Листать вниз">
+        <span>листайте</span>
+        <span class="hero__scroll-line" aria-hidden="true"></span>
+      </a>
+    </section>
+
+    <!-- ---------- Бегущая строка ---------- -->
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker__track" id="tickerTrack">
+        <span>Механика</span><i></i>
+        <span>Термодинамика</span><i></i>
+        <span>Электричество</span><i></i>
+        <span>Оптика</span><i></i>
+        <span>Атомная физика</span><i></i>
+        <span>Робототехника</span><i></i>
+        <span>Проекты</span><i></i>
+        <span>Опыты</span><i></i>
+      </div>
+    </div>
+
+    <!-- ---------- Обо мне ---------- -->
+    <section class="section about" id="about">
+      <div class="container about__grid">
+        <div class="about__media reveal">
+          <div class="portrait tilt">
+            <span class="portrait__ring" aria-hidden="true"></span>
+            <div class="portrait__frame">
+              <img src="assets/img/portrait.webp" width="800" height="1000" alt="Валерия Александровна Хафоева, учитель физики" loading="lazy" decoding="async">
+            </div>
+            <div class="portrait__badge">
+              <svg class="icon" aria-hidden="true"><use href="#i-atom"/></svg>
+              <span><strong>Валерия Александровна</strong><em>учитель физики</em></span>
+            </div>
+            <span class="portrait__formula" aria-hidden="true">λ = c / ν</span>
+          </div>
+        </div>
+
+        <div class="about__body">
+          <p class="eyebrow reveal">Обо мне</p>
+          <h2 class="section__title reveal">Физика — это про то,<br class="br-lg"> как устроен мир</h2>
+
+          <p class="reveal">
+            Миссия учителя состоит в том, чтобы способствовать интеллектуальному росту
+            своих учеников, обучая их навыкам, необходимым для поиска истины, добра
+            и красоты в мире.
+          </p>
+          <p class="reveal">
+            Учитель должен стремиться создать среду обучения, которая поддерживает
+            индивидуальное и совместное обучение и вдохновляет учеников стать
+            вовлечёнными, ответственными гражданами. Кроме того, учитель несёт
+            ответственность за то, чтобы привить своим ученикам страсть к обучению,
+            способствуя их успеху в будущих начинаниях.
+          </p>
+
+          <blockquote class="quote reveal">
+            <span class="quote__mark" aria-hidden="true">“</span>
+            В каждом учителе солнце — только дайте ему светить!
+          </blockquote>
+
+          <ul class="chips reveal">
+            <li>Физика 7–9 классы</li>
+            <li>Кружок робототехники</li>
+            <li>Проектная деятельность</li>
+          </ul>
         </div>
       </div>
-    </div>
-    <!-- Секция для ссылок на страницы -->
-    <div class="w-full min-h-screen md:mb-0 bg-[#9bd5e2] grid place-items-center">
-      <div class="w-full h-full sm:w-5/6 xl:w-4/5 sm:h-3/5 grid place-items-center grid-cols-1 md:grid-cols-2 gap-10">
-        <a href="achievement.html"
-          class="bg-[#9bd5e2] hover:bg-[#a4e2f0] border-2 rounded-2xl pl-4 flex gap-2 justify-center items-center w-full h-full">
-          <img
-            src="https://lh3.googleusercontent.com/MxoSZqC9XUaXPIy3-l4nihujY0VfyvPSErm8X4k43vFAfwywJKAU-rrRwcq3cJuBktJk8d8ksjgPfNUHpwO7FSvihce-JmCycVRKXzX1M1xdZ7urSMUiAdcdXSvm8cy2I8svmSn0=w2400"
-            class="flex-1 w-20 rounded-2xl" alt="">
-          <span class="flex-1 text-center text-lg font-medium text-gray-700">Дипломы и достижения</span>
-        </a>
-        <a href="educational.html"
-          class="bg-[#9bd5e2] hover:bg-[#a4e2f0] border-2 rounded-2xl pl-4 flex gap-2 justify-center items-center w-full h-full">
-          <img
-            src="https://lh3.googleusercontent.com/oxi0j4MCi6tR9cdwbY7p4KMQNuK3f90tAHX6Lgc_WPiFEN-jzVqnXppCtkWD025yRHMv_nRw_PNg1rxaNM7V_8w_C7GwN5eTXiWS9bqFLqntcq6T2W_APQXyhPTNC8lTBnmEn-s2=w2400"
-            class="flex-1 w-20 rounded-2xl" alt="">
-          <span class="flex-1 text-center text-lg font-medium text-gray-700">Учебный процесс</span>
-        </a>
-        <a href="robot.html"
-          class="bg-[#9bd5e2] hover:bg-[#a4e2f0] border-2 rounded-2xl pl-4 flex gap-2 justify-center items-center w-full h-full">
-          <img
-            src="https://lh3.googleusercontent.com/knfXXGlz0NHJJ38Mn76hrJt001id7q6xXwNW7A8NjYUlF1y6cj3lql3BBQJ5D5d3uzA1DHucLXX48mO1esXTnld_OIx6NVukDdWeMowDFp8ZJbAp0V1n2OowZtNR5VMj252zk5mk=w2400"
-            class="flex-1 w-20 rounded-2xl" alt="">
-          <span class="flex-1 text-center text-lg font-medium text-gray-700">Кружок робототехники</span>
-        </a>
-        <a href="events.html"
-          class="bg-[#9bd5e2] hover:bg-[#a4e2f0] border-2 rounded-2xl pl-4 flex gap-2 justify-center items-center w-full h-full">
-          <img
-            src="https://lh3.googleusercontent.com/UFBf-5cFHZGq0IN-V90AnVu1PTnogOWDKTmrsY-ksLz_bQH7bI6U7MBXkf-weOpHmZTMmO5I6HHQgW0_Mc5AlyxCA61jVDBjOiY49RW7pCWyTlM0YMF63-UKS1RT5D82P0a9gqqUBg=w2400"
-            class="flex-1 w-20 rounded-2xl" alt="">
-          <span class="flex-1 text-center text-lg font-medium text-gray-700">События</span>
-        </a>
-      </div>
-    </div>
-    <!-- Секция для текста и ссылки -->
-    <div class="w-full min-h-screen bg-[#9bd5e2] flex flex-col justify-around">
-      <!-- Текст -->
-      <p class="font-normal text-gray-800 italic text-2xl px-10">Миссия учителя состоит в том, чтобы способствовать
-        интеллектуальному
-        росту
-        своих учеников, обучая их навыкам, необходимым для поиска истины, добра и красоты в мире. Учитель должен
-        стремиться создать среду обучения, которая поддерживает индивидуальное и совместное обучение и вдохновляет
-        учеников стать вовлеченными, ответственными гражданами. Кроме того, учитель несёт ответственность за то, чтобы
-        привить своим ученикам страсть к обучению, способствуя их успеху в будущих начинаниях.</p>
-      <a href="https://drive.google.com/drive/folders/1WWYZHfMLGTwkZtpcvKM5IHOeqRQSlqVS"
-        class="bg-[#9bd5e2] hover:bg-[#a4e2f0] mt-2 border-2 rounded-2xl p-4 flex flex-wrap justify-center items-center mx-auto w-2/3"
-        target="blank">
-        <span class="w-2/3 sm:w-1/2 text-center text-gray-800">Предлагаю ссылку для бесплатного скачивания УМК.
-          Электронные
-          учебники по физики
-          7, 8, 9 класс Перышкин А.В.
-        </span>
-        <img
-          src="https://lh3.googleusercontent.com/um6sBSKnITl9jHMXXFwP7dmlt2ooak-cv7lT5JdF-Pi2Rz1BKlp4R-HQKOukXhPTtsy1yGvqE7B7WwZsiXUo6FbAd2m9nZ_Qvcs-TWBCbwRusEOVIMFTOZ9pyvl146bY_UOak_rnRA=w2400"
-          class="w-2/3 sm:w-1/2" alt="">
-      </a>
-      <h1 class="text-center p-4 text-2xl text-gray-700 font-semibold">методическая копилка</h1>
-      <div class="w-full min-h-fit md:mb-0 bg-[#9bd5e2] flex justify-around">
-        <a href="https://aladdin-dev.github.io/power-calculator/" target="_blank"
-          class="bg-[#9bd5e2] hover:bg-[#a4e2f0] border-2 rounded-2xl p-4 flex gap-2 justify-center items-center  min-h-fit">
-          <img src="http://www.stqr.ru/qrcodes/QR-code_url_28_Mar_2023_20-24-11.svg"
-            class="flex-1 w-24 rounded-2xl" alt="">
-          <span class="flex-3 text-center text-lg font-medium text-gray-700">power-calculator</span>
-        </a>
-        <a href="https://aladdin-dev.github.io/testing-app/" target="_blank"
-          class="bg-[#9bd5e2] hover:bg-[#a4e2f0] border-2 rounded-2xl p-4 flex gap-2 justify-center items-center  min-h-fit">
-          <img src="http://www.stqr.ru/qrcodes/QR-code_url_28_Mar_2023_20-28-0.svg"
-            class="flex-1 w-24 rounded-2xl" alt="">
-          <span class="flex-3 text-center text-lg font-medium text-gray-700">программа тестирования</span>
-        </a>
-      </div>
-    </div>
-  </div>
-</body>
 
+      <div class="container">
+        <a class="umk reveal" href="https://drive.google.com/drive/folders/1WWYZHfMLGTwkZtpcvKM5IHOeqRQSlqVS" target="_blank" rel="noopener">
+          <span class="umk__media">
+            <img src="assets/img/umk.webp" width="768" height="432" alt="Электронные учебники по физике для 7, 8 и 9 класса, автор А.В. Перышкин" loading="lazy" decoding="async">
+          </span>
+          <span class="umk__body">
+            <span class="umk__label">Бесплатно · УМК</span>
+            <span class="umk__title">Электронные учебники по физике для 7, 8 и 9 класса</span>
+            <span class="umk__text">Перышкин А.В. — перейти к папке с учебниками на Google Диске</span>
+          </span>
+          <span class="umk__arrow"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ---------- Направления ---------- -->
+    <section class="section directions" id="directions">
+      <div class="container">
+        <header class="section__head">
+          <p class="eyebrow reveal">Направления</p>
+          <h2 class="section__title reveal">Четыре дороги в физику</h2>
+          <p class="section__lead reveal">Выберите раздел — откроется галерея с фотографиями.</p>
+        </header>
+
+        <div class="dir-grid" id="dirGrid">
+          <!-- карточки направлений собираются из GALLERY_CATEGORIES -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------- Галерея ---------- -->
+    <section class="section gallery" id="gallery">
+      <div class="container">
+        <div class="gallery__head">
+          <header class="section__head section__head--tight">
+            <p class="eyebrow reveal">Галерея</p>
+            <h2 class="section__title reveal">Жизнь школы в кадрах</h2>
+          </header>
+          <div class="tabs reveal" id="galleryTabs" role="group" aria-label="Категории фотографий"></div>
+        </div>
+        <div class="masonry reveal" id="galleryGrid"></div>
+        <div class="gallery__more" id="galleryMoreWrap">
+          <button class="btn btn--more" type="button" id="galleryMore">Показать ещё</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------- Методическая копилка ---------- -->
+    <section class="section tools" id="tools">
+      <div class="tools__grid-lines" aria-hidden="true"></div>
+      <div class="container">
+        <header class="section__head section__head--dark">
+          <p class="eyebrow reveal">Методическая копилка</p>
+          <h2 class="section__title reveal">Приложения для уроков<br class="br-lg"> и проверки знаний</h2>
+          <p class="section__lead reveal">
+            Копилка будет пополняться: здесь появятся новые тренажёры, тесты и лаборатории.
+            Пока — приложения, которыми уже пользуются ученики.
+          </p>
+        </header>
+
+        <div class="tools__grid" id="toolsGrid"></div>
+
+        <p class="tools__hint reveal">
+          <svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg>
+          Раздел пополняется — новые приложения появятся здесь же.
+        </p>
+      </div>
+    </section>
+
+    <!-- ---------- Переменка ---------- -->
+    <section class="section games" id="games">
+      <div class="container">
+        <header class="section__head">
+          <p class="eyebrow reveal">Переменка</p>
+          <h2 class="section__title reveal">Игры на перемене<br class="br-lg"> и после уроков</h2>
+          <p class="section__lead reveal">
+            Проведите перемену с пользой: играйте с одноклассниками прямо
+            с телефона или компьютера.
+          </p>
+        </header>
+
+        <div class="games__grid" id="gamesGrid"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ---------- Подвал ---------- -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <span class="brand__mark" aria-hidden="true">В</span>
+          <p class="footer__name">Хафоева Валерия Александровна</p>
+          <p class="footer__role">Учитель физики · МБОУ СОШ им. А.И. Крушанова, с. Михайловка</p>
+        </div>
+
+        <nav class="footer__nav" aria-label="Разделы">
+          <a href="#about">Обо мне</a>
+          <a href="#directions">Направления</a>
+          <a href="#gallery">Галерея</a>
+          <a href="#tools">Методическая копилка</a>
+          <a href="#games">Переменка</a>
+        </nav>
+
+        <div class="footer__links">
+          <a href="https://drive.google.com/drive/folders/1WWYZHfMLGTwkZtpcvKM5IHOeqRQSlqVS" target="_blank" rel="noopener">
+            Учебники (УМК) <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+          </a>
+          <a href="https://aladdin-dev.github.io/power-calculator/" target="_blank" rel="noopener">
+            Power Calculator <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+          </a>
+          <a href="https://aladdin-dev.github.io/testing-app/" target="_blank" rel="noopener">
+            Программа тестирования <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+          </a>
+          <a href="https://aladdin-dev.github.io/dpskSeaBattle/" target="_blank" rel="noopener">
+            Морской бой <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p>© <span id="year">2026</span> Хафоева В.А. Все фотографии — из школьной жизни.</p>
+        <a class="footer__up" href="#top">Наверх <svg class="icon" aria-hidden="true"><use href="#i-down"/></svg></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ---------- Просмотр фото ---------- -->
+  <dialog class="lightbox" id="lightbox" aria-label="Просмотр фотографии">
+    <div class="lightbox__bar">
+      <span class="lightbox__count" id="lbCount"></span>
+      <button class="lightbox__btn" type="button" id="lbClose" aria-label="Закрыть">
+        <svg class="icon" aria-hidden="true"><use href="#i-close"/></svg>
+      </button>
+    </div>
+
+    <div class="lightbox__stage">
+      <button class="lightbox__nav lightbox__nav--prev" type="button" id="lbPrev" aria-label="Предыдущая фотография">
+        <svg class="icon" aria-hidden="true"><use href="#i-chev-left"/></svg>
+      </button>
+      <figure class="lightbox__figure">
+        <img id="lbImage" alt="">
+        <figcaption class="lightbox__caption" id="lbCaption"></figcaption>
+      </figure>
+      <button class="lightbox__nav lightbox__nav--next" type="button" id="lbNext" aria-label="Следующая фотография">
+        <svg class="icon" aria-hidden="true"><use href="#i-chev-right"/></svg>
+      </button>
+    </div>
+  </dialog>
+
+  <script src="assets/js/data.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+</body>
 </html>

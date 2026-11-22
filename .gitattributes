@@ -1,0 +1,9 @@
+*.webp binary
+*.jpg binary
+*.png binary
+*.woff2 binary
+*.svg text
+*.html text
+*.css text
+*.js text
+*.md text
